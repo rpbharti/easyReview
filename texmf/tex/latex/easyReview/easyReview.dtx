@@ -213,7 +213,7 @@
 %
 % \begin{macro}{\remove}
 %    \begin{macrocode}
-\newcommand{\remove}[1]{\ifistoreview\alertColor{\st{#1}}\else #1\fi}
+\newcommand{\remove}[1]{\ifistoreview\alertColor{\st{#1}}\else {}\fi}
 %    \end{macrocode}
 % \end{macro}
 %
@@ -227,21 +227,21 @@
 %
 % \begin{macro}{\substitute}
 %    \begin{macrocode}
-\newcommand{\substitute}[2]{\ifistoreview\remove{#1}~\add{#2} \else #1\fi}
+\newcommand{\substitute}[2]{\ifistoreview\remove{#1}~\add{#2} \else {#2}\fi}
 %    \end{macrocode}
 % \end{macro}
 %
 %
 % \begin{macro}{\replace}
 %    \begin{macrocode}
-\newcommand{\replace}[2]{\ifistoreview\remove{#1}~\add{#2}\else #1\fi}
+\newcommand{\replace}[2]{\ifistoreview\remove{#1}~\add{#2}\else {#2}\fi}
 %    \end{macrocode}
 % \end{macro}
 %
 %
 % \begin{macro}{\highlight}
 %    \begin{macrocode}
-\newcommand{\highlight}[1]{\hl{#1}}
+\newcommand{\highlight}[1]{\ifistoreview{\hl{#1}}\else {}\fi}
 %    \end{macrocode}
 % \end{macro}
 %
